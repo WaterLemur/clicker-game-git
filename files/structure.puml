@@ -1,0 +1,45 @@
+@startuml
+
+skinparam BackgroundColor #d38888
+skinparam Handwritten true
+
+skinparam sequence {
+ArrowColor #FF0000
+}
+skinparam state {
+  StartColor White
+  EndColor black
+  BackgroundColor #b05c73
+  
+  BackgroundColor<<Warning>> Olive
+  BorderColor Gray
+  FontName Impact
+}
+
+[*] --> Logo
+Logo -> Game
+Game --> End
+End --> Logo
+
+
+state Game ##b947cd {
+    [*] -> BodyParts
+    BodyParts -> Maggots
+    Maggots -> Rebirth
+    Rebirth -> [*]
+}
+
+Logo : Infinity Ga∞es
+Logo : Water_Lemur();
+
+BodyParts : Heart
+BodyParts : Body
+BodyParts : Dead
+
+Maggots : Roten
+Maggots : More Maggots
+
+Rebirth : Strings
+End : Scoreboard
+
+@enduml
