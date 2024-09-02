@@ -1,6 +1,6 @@
 # clicker-game-git
 
-*Clicker Game*
+*Clicker Game - Godot 4.3*
 
 >GAME: ··········· [itch.io](https://water-lemur.itch.io/clicker-game)
 
