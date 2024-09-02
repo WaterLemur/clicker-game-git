@@ -1,8 +1,38 @@
-[gd_scene format=3 uid="uid://c7r1hl0rj2hak"]
+[gd_scene load_steps=4 format=3 uid="uid://b8e7vw6succ4w"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://assets/scripts/intro.gd" id="1_udnbe"]
+[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_nlpb4"]
+[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_565ac"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Intro" type="Node"]
+script = ExtResource("1_udnbe")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "test"
+offset_bottom = 40.0
+
+[node name="Logo" type="ColorRect" parent="HUD"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 259.0
+offset_right = 737.0
+offset_bottom = 459.0
+
+[node name="Name" type="Label" parent="HUD"]
+offset_left = 487.0
+offset_top = 498.0
+offset_right = 746.0
+offset_bottom = 548.0
+text = "Infinity Ga∞es"
+label_settings = ExtResource("2_nlpb4")
+
+[node name="Dev" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 583.0
+offset_right = 1263.0
+offset_bottom = 633.0
+text = "Water_Lemur;"
+label_settings = ExtResource("3_565ac")

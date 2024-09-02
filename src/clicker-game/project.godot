@@ -11,12 +11,23 @@ config_version=5
 [application]
 
 config/name="Clicker Game"
-run/main_scene="res://scns/intro.tscn"
+run/main_scene="res://scns/system.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "teal",
+"res://assets/fonts/": "orange",
+"res://assets/models/": "blue",
+"res://assets/scripts/": "yellow",
+"res://assets/system/": "purple",
+"res://assets/textures/": "red",
+"res://scns/": "purple"
+}
+
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true

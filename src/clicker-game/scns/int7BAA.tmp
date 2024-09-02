@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7r1hl0rj2hak"]
+
+[ext_resource type="Script" path="res://assets/scripts/intro.gd" id="1_ctv7s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_ctv7s")
+
+[node name="HUD" type="Control" parent="Node"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Node/HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "test"
+
+[node name="ColorRect" type="ColorRect" parent="Node/HUD"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 141.0
+offset_right = 638.0
+offset_bottom = 173.0
