@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcf1j05owp6if"]
+[gd_scene load_steps=3 format=3 uid="uid://bcf1j05owp6if"]
 
 [ext_resource type="Script" path="res://assets/scripts/upgrades.gd" id="1_u0ney"]
+[ext_resource type="Texture2D" uid="uid://bsrm18o7khh0g" path="res://assets/images/Heart.png" id="2_s04t5"]
 
 [node name="Upgrades" type="Node"]
 script = ExtResource("1_u0ney")
@@ -23,7 +24,7 @@ text = "Pulses:"
 layout_mode = 0
 offset_left = 65.0
 offset_top = 1.0
-offset_right = 127.0
+offset_right = 229.0
 offset_bottom = 37.0
 text = "000000000"
 
@@ -74,14 +75,8 @@ offset_right = 267.0
 offset_bottom = 38.0
 text = "10"
 
-[node name="Btn Upg 1" type="Button" parent="HUD/Upgrade 1"]
-layout_mode = 0
-offset_left = 286.0
-offset_right = 326.0
-offset_bottom = 31.0
-text = "+"
-
 [node name="Upgrade 2" type="Label" parent="HUD"]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 216.0
 offset_right = 101.0
@@ -89,14 +84,14 @@ offset_bottom = 252.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Upgrade 1" type="Label" parent="HUD/Upgrade 2"]
+[node name="Upgrade 2" type="Label" parent="HUD/Upgrade 2"]
 layout_mode = 0
 offset_left = 89.0
 offset_right = 181.0
 offset_bottom = 36.0
 text = "Upgrade 2"
 
-[node name="Upgrade 1 price" type="Label" parent="HUD/Upgrade 2"]
+[node name="Upgrade 2 price" type="Label" parent="HUD/Upgrade 2"]
 layout_mode = 0
 offset_left = 213.0
 offset_top = 2.0
@@ -104,14 +99,22 @@ offset_right = 267.0
 offset_bottom = 38.0
 text = "20"
 
-[node name="Btn Upg 2" type="Button" parent="HUD/Upgrade 2"]
-layout_mode = 0
-offset_left = 286.0
-offset_right = 326.0
-offset_bottom = 31.0
-text = "+"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(897.995, 145)
+scale = Vector2(0.466777, 0.466777)
+texture = ExtResource("2_s04t5")
+
+[node name="background" type="ColorRect" parent="."]
+z_index = -100
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 643.0
+mouse_force_pass_scroll_events = false
+color = Color(0.918584, 0.448583, 0.462091, 1)
 
 [node name="Button" type="Button" parent="."]
+z_index = 50
 offset_left = 737.0
 offset_top = 195.0
 offset_right = 1076.0
@@ -119,6 +122,22 @@ offset_bottom = 428.0
 action_mode = 0
 text = "click me!"
 
-[connection signal="pressed" from="HUD/Upgrade 1/Btn Upg 1" to="." method="upgrade_1_pressed"]
-[connection signal="pressed" from="HUD/Upgrade 2/Btn Upg 2" to="." method="upgrade_2_pressed"]
+[node name="Btn Upg 1" type="Button" parent="."]
+z_index = 50
+offset_left = 333.0
+offset_top = 180.0
+offset_right = 373.0
+offset_bottom = 211.0
+text = "+"
+
+[node name="Btn Upg 2" type="Button" parent="."]
+z_index = 50
+offset_left = 332.0
+offset_top = 216.0
+offset_right = 372.0
+offset_bottom = 247.0
+text = "+"
+
 [connection signal="pressed" from="Button" to="." method="clicked"]
+[connection signal="pressed" from="Btn Upg 1" to="." method="upgrade_1_pressed"]
+[connection signal="pressed" from="Btn Upg 2" to="." method="upgrade_2_pressed"]

@@ -1,31 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8e7vw6succ4w"]
 
-[ext_resource type="Script" path="res://assets/scripts/intro.gd" id="1_udnbe"]
+[ext_resource type="Texture2D" uid="uid://knykwhprxseo" path="res://assets/images/Infinity_Ga∞es_LOGO_5_C.png" id="2_34ebk"]
 [ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_nlpb4"]
 [ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_565ac"]
 
 [node name="Intro" type="Node"]
-script = ExtResource("1_udnbe")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1154.0
+offset_bottom = 648.0
 
-[node name="Logo" type="ColorRect" parent="HUD"]
-layout_mode = 0
-offset_left = 453.0
-offset_top = 259.0
-offset_right = 737.0
-offset_bottom = 459.0
+[node name="Logo" type="Sprite2D" parent="HUD"]
+position = Vector2(637, 300)
+texture = ExtResource("2_34ebk")
 
 [node name="Name" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = 487.0
-offset_top = 498.0
-offset_right = 746.0
-offset_bottom = 548.0
+offset_left = 510.0
+offset_top = 541.0
+offset_right = 769.0
+offset_bottom = 591.0
 text = "Infinity Ga∞es"
 label_settings = ExtResource("2_nlpb4")
 

@@ -16,7 +16,7 @@ var upgrade_2_level = 0
 @onready var l_level_1 = $"HUD/Upgrade 1"
 @onready var l_level_2 = $"HUD/Upgrade 2"
 @onready var l_price_1 = $"HUD/Upgrade 1/Upgrade 1 price"
-@onready var l_price_2 = $"HUD/Upgrade 1/Upgrade 2 price"
+@onready var l_price_2 = $"HUD/Upgrade 2/Upgrade 2 price"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
