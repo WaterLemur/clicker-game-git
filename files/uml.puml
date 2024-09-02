@@ -1,0 +1,78 @@
+@startuml
+
+skinparam BackgroundColor #d38888
+skinparam Handwritten true
+
+skinparam sequence {
+ArrowColor #FF0000
+}
+skinparam state {
+  StartColor White
+  EndColor black
+  BackgroundColor #b05c73
+  
+  BackgroundColor<<Warning>> Olive
+  BorderColor Gray
+  FontName Impact
+}
+
+class intro {
+  timer : float
+  logo : image
+  font : font
+}
+class game {
+  body
+
+  click()
+}
+class body {
+  click_heart()
+  click_brain()
+  click_lungs()
+  click_rsystem()
+
+  dead()
+}
+class maggots {
+  click_flesh()
+
+  defeat()
+}
+class strings {
+  click_string()
+
+  rebirth()
+}
+class upgrades {
+  heart_1 : bool = false
+  heart_2 : bool = false
+  brain_1 : bool = false
+  brain_2 : bool = false
+  lungs_1 : bool = false
+  lungs_2 : bool = false
+  r_system_1 : bool = false
+  r+system_2 : bool = false
+
+  maggots_1 : bool = false
+  maggots_2 : bool = false
+  
+  strings_1 : bool = false
+}
+class stats {
+  timer : float
+  pulses : int
+  name : string
+  resource : int
+
+  upgrades : upgrades
+}
+class BodyPart {
+  value : int
+}
+
+intro "1" *-- "many" game : contains
+game o-- stats : aggregation
+stats --> "1" BodyPart
+
+@enduml
