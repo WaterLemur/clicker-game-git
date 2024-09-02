@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://250l2gt7iced"]
+
+[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="1_c8ued"]
+[ext_resource type="Script" path="res://assets/scripts/UI/button.gd" id="1_mk0gy"]
+[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="2_kkfr3"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_mk0gy")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 116.0
+offset_right = 708.0
+offset_bottom = 166.0
+text = "Clicker Game"
+label_settings = ExtResource("1_c8ued")
+
+[node name="New" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 253.0
+offset_right = 673.0
+offset_bottom = 301.0
+text = "New Game"
+
+[node name="Load" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 333.0
+offset_right = 675.0
+offset_bottom = 381.0
+text = "Load Game"
+
+[node name="Info" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 577.0
+offset_right = 1133.0
+offset_bottom = 627.0
+text = "Clicker Game - v0.01 - Infinity Ga∞es - 2024"
+label_settings = ExtResource("2_kkfr3")
+vertical_alignment = 1
+
+[connection signal="pressed" from="UI/New" to="." method="_on_button_pressed"]

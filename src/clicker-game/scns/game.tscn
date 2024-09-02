@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=6 format=3 uid="uid://xjiisy5r7hfo"]
 
-[ext_resource type="PackedScene" uid="uid://b4swhx6u01aqt" path="res://scns/heart.tscn" id="1_7kokq"]
+[ext_resource type="PackedScene" uid="uid://b4swhx6u01aqt" path="res://assets/actors/heart.tscn" id="1_7kokq"]
+[ext_resource type="PackedScene" uid="uid://87csxccq4pki" path="res://assets/actors/camera.tscn" id="2_qvi2t"]
+[ext_resource type="PackedScene" uid="uid://cct4mhvf5mdys" path="res://assets/actors/click.tscn" id="3_shecf"]
+[ext_resource type="PackedScene" uid="uid://bcf1j05owp6if" path="res://scns/upgrades.tscn" id="4_37mwv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5xa7p"]
 
 [node name="Game" type="Node3D"]
 
+[node name="Camera" parent="." instance=ExtResource("2_qvi2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416025, 0, 17.308)
+
+[node name="Click" parent="." instance=ExtResource("3_shecf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.449)
+
 [node name="Heart" parent="." instance=ExtResource("1_7kokq")]
+
+[node name="Area3D" type="Area3D" parent="Heart"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Heart/Area3D"]
+transform = Transform3D(22.17, 0, 0, 0, 22.17, 0, 0, 0, 22.17, 0, 0, 0)
+shape = SubResource("SphereShape3D_5xa7p")
+
+[node name="Upgrades" parent="." instance=ExtResource("4_37mwv")]

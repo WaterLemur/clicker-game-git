@@ -21,6 +21,7 @@ offset_right = 737.0
 offset_bottom = 459.0
 
 [node name="Name" type="Label" parent="HUD"]
+layout_mode = 0
 offset_left = 487.0
 offset_top = 498.0
 offset_right = 746.0

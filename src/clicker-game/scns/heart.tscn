@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4swhx6u01aqt"]
-
-[ext_resource type="ArrayMesh" uid="uid://cr3dv278jk253" path="res://assets/models/cube.obj" id="1_ndrrm"]
-
-[node name="Heart" type="Node3D"]
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-mesh = ExtResource("1_ndrrm")

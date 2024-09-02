@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4swhx6u01aqt"]
+
+[ext_resource type="ArrayMesh" uid="uid://cr3dv278jk253" path="res://assets/models/cube.obj" id="1_ndrrm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4c344"]
+
+[node name="Heart" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = ExtResource("1_ndrrm")
+
+[node name="Area3D" type="Area3D" parent="CSGMesh3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D/Area3D"]
+transform = Transform3D(3.525, 0, 0, 0, 3.525, 0, 0, 0, 3.525, 0, 0, 0)
+shape = SubResource("SphereShape3D_4c344")
