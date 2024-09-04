@@ -12,4 +12,5 @@ func _on_button_pressed() -> void:
 	# Code to execute when the button is pressed
 	print("Load: Game")
 	get_tree().root.add_child(game)
-	#get_tree().root.remove_child(main)
+	get_tree().root.remove_child(self)
+	$UI.visible = false

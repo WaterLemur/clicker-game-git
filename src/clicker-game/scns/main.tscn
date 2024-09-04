@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://250l2gt7iced"]
 
+[ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_38t2q"]
 [ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="1_c8ued"]
-[ext_resource type="Script" path="res://assets/scripts/UI/button.gd" id="1_mk0gy"]
 [ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="2_kkfr3"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1_mk0gy")
+script = ExtResource("1_38t2q")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

@@ -4,7 +4,7 @@ var intro = preload("res://scns/intro.tscn").instantiate()
 var main = preload("res://scns/main.tscn").instantiate()
 var game = preload("res://scns/game.tscn").instantiate()
 
-var timer = 3.0
+var timer = 1.69
 var state = 0
 
 
@@ -22,8 +22,11 @@ func _process(delta: float) -> void:
 			timer -= delta
 
 func _load_intro():
-	get_tree().root.add_child(intro)
+	print("Load: Intro")
+	add_child(intro)
+
 	
 func _load_main():
-	get_tree().root.remove_child(intro)
-	get_tree().root.add_child(main)
+	print("Load: Main")
+	remove_child(intro)
+	add_child(main)
