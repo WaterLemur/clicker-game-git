@@ -4,19 +4,19 @@
 [ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_nlpb4"]
 [ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_565ac"]
 
-[node name="Intro" type="Node"]
-
-[node name="HUD" type="Control" parent="."]
+[node name="HUD" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1154.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Logo" type="Sprite2D" parent="HUD"]
-position = Vector2(637, 300)
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(643, 287)
 texture = ExtResource("2_34ebk")
 
-[node name="Name" type="Label" parent="HUD"]
+[node name="Name" type="Label" parent="."]
 layout_mode = 0
 offset_left = 510.0
 offset_top = 541.0
@@ -25,7 +25,7 @@ offset_bottom = 591.0
 text = "Infinity Ga∞es"
 label_settings = ExtResource("2_nlpb4")
 
-[node name="Dev" type="Label" parent="HUD"]
+[node name="Dev" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1004.0
 offset_top = 583.0
