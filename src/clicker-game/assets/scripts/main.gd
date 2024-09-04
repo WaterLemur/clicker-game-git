@@ -1,6 +1,7 @@
 extends Node
 
 @onready var btn_new = $UI/New
+@onready var ui = $UI
 var game = preload("res://scns/game.tscn").instantiate()
 #var main = preload("res://scns/main.tscn").instantiate()
 
@@ -13,4 +14,4 @@ func _on_button_pressed() -> void:
 	print("Load: Game")
 	get_tree().root.add_child(game)
 	get_tree().root.remove_child(self)
-	$UI.visible = false
+	ui.visible = false

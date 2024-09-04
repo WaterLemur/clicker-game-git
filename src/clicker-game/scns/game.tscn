@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=5 format=3 uid="uid://xjiisy5r7hfo"]
 
 [ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_0234q"]
 [ext_resource type="Texture2D" uid="uid://bsrm18o7khh0g" path="res://assets/images/Heart.png" id="1_i84ts"]
 [ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="2_hovgc"]
+[ext_resource type="LabelSettings" uid="uid://b5j02qmr5ae8u" path="res://assets/system/label_click_me.tres" id="4_pwqyd"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -13,156 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0234q")
 
-[node name="HUD" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button Click" type="Button" parent="HUD"]
-z_index = 50
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -428.0
-offset_top = -116.5
-offset_right = -89.0
-offset_bottom = 116.5
-grow_horizontal = 0
-grow_vertical = 2
-action_mode = 0
-text = "click me!"
-
-[node name="Resource" type="Control" parent="HUD"]
-layout_mode = 1
-anchors_preset = 0
-
-[node name="Resource" type="Label" parent="HUD/Resource"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 145.0
-offset_right = 206.0
-offset_bottom = 208.0
-text = "Resource:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Resource Amount" type="Label" parent="HUD/Resource"]
-layout_mode = 0
-offset_left = 215.0
-offset_top = 160.0
-offset_right = 379.0
-offset_bottom = 196.0
-text = "000000000"
-vertical_alignment = 1
-
-[node name="Upgrades" type="Control" parent="HUD"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 35.0
-offset_top = -188.0
-offset_right = 460.0
-offset_bottom = 60.0
-grow_vertical = 2
-
-[node name="Level" type="Label" parent="HUD/Upgrades"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 103.0
-offset_right = 109.0
-offset_bottom = 139.0
-text = "Level"
-
-[node name="Name" type="Label" parent="HUD/Upgrades/Level"]
-layout_mode = 0
-offset_left = 77.0
-offset_right = 128.0
-offset_bottom = 36.0
-text = "Name"
-
-[node name="Price" type="Label" parent="HUD/Upgrades/Level"]
-layout_mode = 0
-offset_left = 202.0
-offset_top = 2.0
-offset_right = 250.0
-offset_bottom = 38.0
-text = "Price"
-
-[node name="Upgrade 1" type="Label" parent="HUD/Upgrades"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 145.0
-offset_right = 106.0
-offset_bottom = 181.0
-text = "0"
-horizontal_alignment = 2
-
-[node name="Upgrade 1" type="Label" parent="HUD/Upgrades/Upgrade 1"]
-layout_mode = 0
-offset_left = 91.0
-offset_right = 183.0
-offset_bottom = 36.0
-text = "Upgrade 1"
-
-[node name="Upgrade 1 price" type="Label" parent="HUD/Upgrades/Upgrade 1"]
-layout_mode = 0
-offset_left = 215.0
-offset_top = 2.0
-offset_right = 269.0
-offset_bottom = 38.0
-text = "10"
-
-[node name="Upgrade 2" type="Label" parent="HUD/Upgrades"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 181.0
-offset_right = 106.0
-offset_bottom = 217.0
-text = "0"
-horizontal_alignment = 2
-
-[node name="Upgrade 2" type="Label" parent="HUD/Upgrades/Upgrade 2"]
-layout_mode = 0
-offset_left = 91.0
-offset_right = 183.0
-offset_bottom = 36.0
-text = "Upgrade 2"
-
-[node name="Upgrade 2 price" type="Label" parent="HUD/Upgrades/Upgrade 2"]
-layout_mode = 0
-offset_left = 216.0
-offset_top = 2.0
-offset_right = 270.0
-offset_bottom = 38.0
-text = "20"
-
-[node name="Button Upgrade 1" type="Button" parent="HUD/Upgrades"]
-z_index = 50
-layout_mode = 0
-offset_left = 331.0
-offset_top = 144.0
-offset_right = 371.0
-offset_bottom = 175.0
-text = "+"
-
-[node name="Button Upgrade 2" type="Button" parent="HUD/Upgrades"]
-z_index = 50
-layout_mode = 0
-offset_left = 331.0
-offset_top = 182.0
-offset_right = 371.0
-offset_bottom = 213.0
-text = "+"
-
 [node name="Background" type="Node2D" parent="."]
-visible = false
 
 [node name="background" type="ColorRect" parent="Background"]
 z_index = -100
@@ -171,9 +23,9 @@ offset_bottom = 645.0
 mouse_force_pass_scroll_events = false
 color = Color(0.918584, 0.448583, 0.462091, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
+[node name="Heart" type="Sprite2D" parent="Background"]
 z_index = -1
-position = Vector2(897.995, 147)
+position = Vector2(903, 328)
 scale = Vector2(0.466777, 0.466777)
 texture = ExtResource("1_i84ts")
 
@@ -195,6 +47,172 @@ position = Vector2(841.753, 600)
 scale = Vector2(1.23925, 0.257812)
 texture = ExtResource("2_hovgc")
 
-[connection signal="pressed" from="HUD/Button Click" to="." method="_click_button"]
-[connection signal="pressed" from="HUD/Upgrades/Button Upgrade 1" to="." method="_upgrade_1_button"]
-[connection signal="pressed" from="HUD/Upgrades/Button Upgrade 2" to="." method="_upgrade_2_button"]
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="click me!" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 283.5
+offset_top = -11.5
+offset_right = 351.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "click me!"
+label_settings = ExtResource("4_pwqyd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Click" type="Button" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+z_index = 50
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -116.5
+offset_right = -89.0
+offset_bottom = 116.5
+grow_horizontal = 0
+grow_vertical = 2
+action_mode = 0
+
+[node name="Resource" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Resource" type="Label" parent="UI/Resource"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 206.0
+offset_bottom = 208.0
+text = "Resource:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Resource Amount" type="Label" parent="UI/Resource"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 160.0
+offset_right = 379.0
+offset_bottom = 196.0
+text = "000000000"
+vertical_alignment = 1
+
+[node name="Upgrades" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -188.0
+offset_right = 460.0
+offset_bottom = 60.0
+grow_vertical = 2
+
+[node name="Level" type="Label" parent="UI/Upgrades"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 103.0
+offset_right = 109.0
+offset_bottom = 139.0
+text = "Level"
+
+[node name="Name" type="Label" parent="UI/Upgrades/Level"]
+layout_mode = 0
+offset_left = 77.0
+offset_right = 128.0
+offset_bottom = 36.0
+text = "Name"
+
+[node name="Price" type="Label" parent="UI/Upgrades/Level"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 38.0
+text = "Price"
+
+[node name="Upgrade 1" type="Label" parent="UI/Upgrades"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 145.0
+offset_right = 106.0
+offset_bottom = 181.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Upgrade 1" type="Label" parent="UI/Upgrades/Upgrade 1"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 183.0
+offset_bottom = 36.0
+text = "Upgrade 1"
+
+[node name="Upgrade 1 price" type="Label" parent="UI/Upgrades/Upgrade 1"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 2.0
+offset_right = 269.0
+offset_bottom = 38.0
+text = "10"
+
+[node name="Upgrade 2" type="Label" parent="UI/Upgrades"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 181.0
+offset_right = 106.0
+offset_bottom = 217.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Upgrade 2" type="Label" parent="UI/Upgrades/Upgrade 2"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 183.0
+offset_bottom = 36.0
+text = "Upgrade 2"
+
+[node name="Upgrade 2 price" type="Label" parent="UI/Upgrades/Upgrade 2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 2.0
+offset_right = 270.0
+offset_bottom = 38.0
+text = "20"
+
+[node name="Button Upgrade 1" type="Button" parent="UI/Upgrades"]
+z_index = 50
+layout_mode = 0
+offset_left = 331.0
+offset_top = 144.0
+offset_right = 371.0
+offset_bottom = 175.0
+text = "+"
+
+[node name="Button Upgrade 2" type="Button" parent="UI/Upgrades"]
+z_index = 50
+layout_mode = 0
+offset_left = 331.0
+offset_top = 182.0
+offset_right = 371.0
+offset_bottom = 213.0
+text = "+"
+
+[connection signal="pressed" from="UI/Button Click" to="." method="_click_button"]
+[connection signal="pressed" from="UI/Upgrades/Button Upgrade 1" to="." method="_upgrade_1_button"]
+[connection signal="pressed" from="UI/Upgrades/Button Upgrade 2" to="." method="_upgrade_2_button"]
