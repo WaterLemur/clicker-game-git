@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=9 format=3 uid="uid://xjiisy5r7hfo"]
 
 [ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
-[ext_resource type="Texture2D" uid="uid://bsrm18o7khh0g" path="res://assets/images/Heart.png" id="2_il01n"]
+[ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
 [ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="3_sq8xp"]
-[ext_resource type="LabelSettings" uid="uid://b5j02qmr5ae8u" path="res://assets/system/label_click_me.tres" id="4_1atjd"]
+[ext_resource type="Texture2D" uid="uid://hfs4aurbncbm" path="res://assets/images/Brain.png" id="5_hrnq2"]
+[ext_resource type="Texture2D" uid="uid://be23gr3t65yfs" path="res://assets/images/Eye.png" id="6_4j7qc"]
+[ext_resource type="Texture2D" uid="uid://bsxqsxq3rx6cq" path="res://assets/images/Lungs_A.png" id="7_b1rrd"]
+[ext_resource type="Texture2D" uid="uid://d1cwlushogmmm" path="res://assets/images/Lungs_B.png" id="8_rw4wp"]
+[ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -14,20 +18,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tnw1w")
 
-[node name="Background" type="Node2D" parent="."]
-
-[node name="background" type="ColorRect" parent="Background"]
-z_index = -100
-offset_right = 1155.0
-offset_bottom = 645.0
-mouse_force_pass_scroll_events = false
-color = Color(0.918584, 0.448583, 0.462091, 1)
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Heart" type="Sprite2D" parent="Background"]
 z_index = -1
-position = Vector2(903, 328)
-scale = Vector2(0.466777, 0.466777)
-texture = ExtResource("2_il01n")
+position = Vector2(512, 288)
+texture = ExtResource("2_2giyt")
 
 [node name="Vessels2" type="Sprite2D" parent="Background"]
 z_index = 1
@@ -55,41 +57,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="click me!" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 283.5
-offset_top = -11.5
-offset_right = 351.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "click me!"
-label_settings = ExtResource("4_1atjd")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button Click" type="Button" parent="UI"]
-modulate = Color(1, 1, 1, 0)
-z_index = 50
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -428.0
-offset_top = -116.5
-offset_right = -89.0
-offset_bottom = 116.5
-grow_horizontal = 0
-grow_vertical = 2
-action_mode = 0
-
 [node name="Resource" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 0
@@ -113,7 +80,36 @@ offset_bottom = 196.0
 text = "000000000"
 vertical_alignment = 1
 
-[node name="Upgrades" type="Control" parent="UI"]
+[node name="Upgrades" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Brain" type="Sprite2D" parent="Upgrades"]
+position = Vector2(623, 139)
+texture = ExtResource("5_hrnq2")
+
+[node name="Eye" type="Sprite2D" parent="Upgrades"]
+position = Vector2(904, 106)
+texture = ExtResource("6_4j7qc")
+
+[node name="Lungs" type="Node2D" parent="Upgrades"]
+position = Vector2(620, 384)
+
+[node name="Lungs A" type="Sprite2D" parent="Upgrades/Lungs"]
+texture = ExtResource("7_b1rrd")
+
+[node name="Lungs B" type="Sprite2D" parent="Upgrades/Lungs"]
+texture = ExtResource("8_rw4wp")
+
+[node name="Rib Cage" type="Sprite2D" parent="Upgrades"]
+position = Vector2(787, 376)
+texture = ExtResource("9_uiadv")
+
+[node name="Upgrades2" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -124,7 +120,7 @@ offset_right = 460.0
 offset_bottom = 60.0
 grow_vertical = 2
 
-[node name="Level" type="Label" parent="UI/Upgrades"]
+[node name="Level" type="Label" parent="Upgrades2"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 103.0
@@ -132,14 +128,14 @@ offset_right = 109.0
 offset_bottom = 139.0
 text = "Level"
 
-[node name="Name" type="Label" parent="UI/Upgrades/Level"]
+[node name="Name" type="Label" parent="Upgrades2/Level"]
 layout_mode = 0
 offset_left = 77.0
 offset_right = 128.0
 offset_bottom = 36.0
 text = "Name"
 
-[node name="Price" type="Label" parent="UI/Upgrades/Level"]
+[node name="Price" type="Label" parent="Upgrades2/Level"]
 layout_mode = 0
 offset_left = 202.0
 offset_top = 2.0
@@ -147,7 +143,7 @@ offset_right = 250.0
 offset_bottom = 38.0
 text = "Price"
 
-[node name="Upgrade 1" type="Label" parent="UI/Upgrades"]
+[node name="Upgrade 1" type="Label" parent="Upgrades2"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 145.0
@@ -156,14 +152,14 @@ offset_bottom = 181.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Upgrade 1" type="Label" parent="UI/Upgrades/Upgrade 1"]
+[node name="Upgrade 1" type="Label" parent="Upgrades2/Upgrade 1"]
 layout_mode = 0
 offset_left = 91.0
 offset_right = 183.0
 offset_bottom = 36.0
 text = "Upgrade 1"
 
-[node name="Upgrade 1 price" type="Label" parent="UI/Upgrades/Upgrade 1"]
+[node name="Upgrade 1 price" type="Label" parent="Upgrades2/Upgrade 1"]
 layout_mode = 0
 offset_left = 215.0
 offset_top = 2.0
@@ -171,7 +167,7 @@ offset_right = 269.0
 offset_bottom = 38.0
 text = "10"
 
-[node name="Upgrade 2" type="Label" parent="UI/Upgrades"]
+[node name="Upgrade 2" type="Label" parent="Upgrades2"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 181.0
@@ -180,14 +176,14 @@ offset_bottom = 217.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Upgrade 2" type="Label" parent="UI/Upgrades/Upgrade 2"]
+[node name="Upgrade 2" type="Label" parent="Upgrades2/Upgrade 2"]
 layout_mode = 0
 offset_left = 91.0
 offset_right = 183.0
 offset_bottom = 36.0
 text = "Upgrade 2"
 
-[node name="Upgrade 2 price" type="Label" parent="UI/Upgrades/Upgrade 2"]
+[node name="Upgrade 2 price" type="Label" parent="Upgrades2/Upgrade 2"]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 2.0
@@ -195,7 +191,7 @@ offset_right = 270.0
 offset_bottom = 38.0
 text = "20"
 
-[node name="Button Upgrade 1" type="Button" parent="UI/Upgrades"]
+[node name="Button Upgrade 1" type="Button" parent="Upgrades2"]
 z_index = 50
 layout_mode = 0
 offset_left = 331.0
@@ -204,7 +200,7 @@ offset_right = 371.0
 offset_bottom = 175.0
 text = "+"
 
-[node name="Button Upgrade 2" type="Button" parent="UI/Upgrades"]
+[node name="Button Upgrade 2" type="Button" parent="Upgrades2"]
 z_index = 50
 layout_mode = 0
 offset_left = 331.0
@@ -213,6 +209,50 @@ offset_right = 371.0
 offset_bottom = 213.0
 text = "+"
 
-[connection signal="pressed" from="UI/Button Click" to="." method="_click_button"]
-[connection signal="pressed" from="UI/Upgrades/Button Upgrade 1" to="." method="_upgrade_1_button"]
-[connection signal="pressed" from="UI/Upgrades/Button Upgrade 2" to="." method="_upgrade_2_button"]
+[node name="Main buttons" type="BoxContainer" parent="."]
+layout_mode = 1
+offset_left = 67.0
+offset_top = 44.0
+offset_right = 293.0
+offset_bottom = 84.0
+
+[node name="Button Brain" type="Button" parent="Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Brain"
+
+[node name="Button Eye" type="Button" parent="Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Eye"
+
+[node name="Button Lungs" type="Button" parent="Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Lungs"
+
+[node name="Button Rib Cage" type="Button" parent="Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Rib Cage"
+
+[node name="Click" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 699.0
+offset_top = 143.0
+offset_right = -89.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Upgrades2/Button Upgrade 1" to="." method="_upgrade_1_button"]
+[connection signal="pressed" from="Upgrades2/Button Upgrade 2" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="Main buttons/Button Brain" to="." method="_on_button_brain_pressed"]
+[connection signal="pressed" from="Main buttons/Button Eye" to="." method="_on_button_eye_pressed"]
+[connection signal="pressed" from="Main buttons/Button Lungs" to="." method="_on_button_lungs_pressed"]
+[connection signal="pressed" from="Main buttons/Button Rib Cage" to="." method="_on_button_rib_cage_pressed"]
+[connection signal="pressed" from="Click" to="." method="_on_click_pressed"]

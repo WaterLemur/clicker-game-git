@@ -1,6 +1,6 @@
 extends Control
 
-@onready var logo =    $Logo
+@onready var logo =    $Logo/Sprite2D
 @onready var company = $Company
 @onready var dev =     $Dev
 
