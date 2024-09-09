@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8e7vw6succ4w"]
 
-[ext_resource type="Script" path="res://assets/scripts/intro.gd" id="1_v64bu"]
-[ext_resource type="Texture2D" uid="uid://knykwhprxseo" path="res://assets/images/Infinity_Ga∞es_LOGO_5_C.png" id="2_34ebk"]
-[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_nlpb4"]
-[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_565ac"]
+[ext_resource type="Script" path="res://assets/scripts/intro.gd" id="1_dxptp"]
+[ext_resource type="Texture2D" uid="uid://knykwhprxseo" path="res://assets/images/Infinity_Ga∞es_LOGO_5_C.png" id="2_5iwtv"]
+[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="3_57wio"]
+[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="4_jhe64"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v64bu")
+script = ExtResource("1_dxptp")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,7 +25,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(577, 294)
-texture = ExtResource("2_34ebk")
+texture = ExtResource("2_5iwtv")
 
 [node name="Company" type="Label" parent="."]
 layout_mode = 1
@@ -41,7 +41,7 @@ offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Infinity Ga∞es"
-label_settings = ExtResource("2_nlpb4")
+label_settings = ExtResource("3_57wio")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -59,6 +59,6 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Water_Lemur;"
-label_settings = ExtResource("3_565ac")
+label_settings = ExtResource("4_jhe64")
 horizontal_alignment = 2
 vertical_alignment = 1

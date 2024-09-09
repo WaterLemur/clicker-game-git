@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://xjiisy5r7hfo"]
 
-[ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_0234q"]
-[ext_resource type="Texture2D" uid="uid://bsrm18o7khh0g" path="res://assets/images/Heart.png" id="1_i84ts"]
-[ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="2_hovgc"]
-[ext_resource type="LabelSettings" uid="uid://b5j02qmr5ae8u" path="res://assets/system/label_click_me.tres" id="4_pwqyd"]
+[ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
+[ext_resource type="Texture2D" uid="uid://bsrm18o7khh0g" path="res://assets/images/Heart.png" id="2_il01n"]
+[ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="3_sq8xp"]
+[ext_resource type="LabelSettings" uid="uid://b5j02qmr5ae8u" path="res://assets/system/label_click_me.tres" id="4_1atjd"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0234q")
+script = ExtResource("1_tnw1w")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -27,25 +27,25 @@ color = Color(0.918584, 0.448583, 0.462091, 1)
 z_index = -1
 position = Vector2(903, 328)
 scale = Vector2(0.466777, 0.466777)
-texture = ExtResource("1_i84ts")
+texture = ExtResource("2_il01n")
 
 [node name="Vessels2" type="Sprite2D" parent="Background"]
 z_index = 1
 position = Vector2(392.5, 467)
 scale = Vector2(0.541016, 0.804687)
-texture = ExtResource("2_hovgc")
+texture = ExtResource("3_sq8xp")
 
 [node name="Vessels" type="Sprite2D" parent="Background"]
 z_index = 1
 position = Vector2(115.247, 528)
 scale = Vector2(0.540029, 0.578125)
-texture = ExtResource("2_hovgc")
+texture = ExtResource("3_sq8xp")
 
 [node name="Vessels3" type="Sprite2D" parent="Background"]
 z_index = 1
 position = Vector2(841.753, 600)
 scale = Vector2(1.23925, 0.257812)
-texture = ExtResource("2_hovgc")
+texture = ExtResource("3_sq8xp")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
@@ -69,7 +69,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "click me!"
-label_settings = ExtResource("4_pwqyd")
+label_settings = ExtResource("4_1atjd")
 horizontal_alignment = 1
 vertical_alignment = 1
 

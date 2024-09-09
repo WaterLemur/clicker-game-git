@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://250l2gt7iced"]
 
-[ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_38t2q"]
-[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="1_c8ued"]
-[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="2_kkfr3"]
+[ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_q0u7k"]
+[ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_jilr6"]
+[ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_xwetd"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1_38t2q")
+script = ExtResource("1_q0u7k")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -20,7 +20,7 @@ offset_top = 116.0
 offset_right = 708.0
 offset_bottom = 166.0
 text = "Clicker Game"
-label_settings = ExtResource("1_c8ued")
+label_settings = ExtResource("2_jilr6")
 
 [node name="New" type="Button" parent="UI"]
 layout_mode = 0
@@ -45,7 +45,7 @@ offset_top = 577.0
 offset_right = 1133.0
 offset_bottom = 627.0
 text = "Clicker Game - v0.01 - Infinity Ga∞es - 2024"
-label_settings = ExtResource("2_kkfr3")
+label_settings = ExtResource("3_xwetd")
 vertical_alignment = 1
 
 [connection signal="pressed" from="UI/New" to="." method="_on_button_pressed"]
