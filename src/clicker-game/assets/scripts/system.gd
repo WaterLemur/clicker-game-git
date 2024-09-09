@@ -4,7 +4,7 @@ var intro = preload("res://scns/intro.tscn").instantiate()
 var main = preload("res://scns/main.tscn").instantiate()
 var game = preload("res://scns/game.tscn").instantiate()
 
-var timer = 1.69
+var timer = 10.0 #1.69
 var state = 0
 
 
