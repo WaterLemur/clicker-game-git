@@ -211,30 +211,41 @@ text = "+"
 
 [node name="Main buttons" type="BoxContainer" parent="."]
 layout_mode = 1
-offset_left = 67.0
-offset_top = 44.0
-offset_right = 293.0
-offset_bottom = 84.0
+offset_right = 331.0
+offset_bottom = 71.0
+alignment = 1
 
 [node name="Button Brain" type="Button" parent="Main buttons"]
 z_index = 50
 layout_mode = 2
 text = "Brain"
+icon = ExtResource("5_hrnq2")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button Eye" type="Button" parent="Main buttons"]
 z_index = 50
 layout_mode = 2
 text = "Eye"
+icon = ExtResource("6_4j7qc")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button Lungs" type="Button" parent="Main buttons"]
 z_index = 50
 layout_mode = 2
 text = "Lungs"
+icon = ExtResource("7_b1rrd")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button Rib Cage" type="Button" parent="Main buttons"]
 z_index = 50
 layout_mode = 2
 text = "Rib Cage"
+icon = ExtResource("9_uiadv")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Click" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
