@@ -1,0 +1,269 @@
+[gd_scene load_steps=9 format=3 uid="uid://xjiisy5r7hfo"]
+
+[ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
+[ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
+[ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="3_sq8xp"]
+[ext_resource type="Texture2D" uid="uid://hfs4aurbncbm" path="res://assets/images/Brain.png" id="5_hrnq2"]
+[ext_resource type="Texture2D" uid="uid://be23gr3t65yfs" path="res://assets/images/Eye.png" id="6_4j7qc"]
+[ext_resource type="Texture2D" uid="uid://bsxqsxq3rx6cq" path="res://assets/images/Lungs_A.png" id="7_b1rrd"]
+[ext_resource type="Texture2D" uid="uid://d1cwlushogmmm" path="res://assets/images/Lungs_B.png" id="8_rw4wp"]
+[ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tnw1w")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heart" type="Sprite2D" parent="Background"]
+z_index = -1
+position = Vector2(512, 288)
+texture = ExtResource("2_2giyt")
+
+[node name="Vessels2" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(392.5, 467)
+scale = Vector2(0.541016, 0.804687)
+texture = ExtResource("3_sq8xp")
+
+[node name="Vessels" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(115.247, 528)
+scale = Vector2(0.540029, 0.578125)
+texture = ExtResource("3_sq8xp")
+
+[node name="Vessels3" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(841.753, 600)
+scale = Vector2(1.23925, 0.257812)
+texture = ExtResource("3_sq8xp")
+
+[node name="Graphics" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Brain" type="Sprite2D" parent="Graphics"]
+position = Vector2(623, 139)
+texture = ExtResource("5_hrnq2")
+
+[node name="Eye" type="Sprite2D" parent="Graphics"]
+position = Vector2(904, 106)
+texture = ExtResource("6_4j7qc")
+
+[node name="Lungs" type="Node2D" parent="Graphics"]
+position = Vector2(620, 384)
+
+[node name="Lungs A" type="Sprite2D" parent="Graphics/Lungs"]
+texture = ExtResource("7_b1rrd")
+
+[node name="Lungs B" type="Sprite2D" parent="Graphics/Lungs"]
+texture = ExtResource("8_rw4wp")
+
+[node name="Rib Cage" type="Sprite2D" parent="Graphics"]
+position = Vector2(787, 376)
+texture = ExtResource("9_uiadv")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Resource" type="Label" parent="UI/Resource"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 206.0
+offset_bottom = 208.0
+text = "Resource:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Resource Amount" type="Label" parent="UI/Resource"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 160.0
+offset_right = 379.0
+offset_bottom = 196.0
+text = "000000000"
+vertical_alignment = 1
+
+[node name="Upgrades MENU" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -88.0
+offset_right = 367.455
+offset_bottom = 51.4
+grow_vertical = 2
+
+[node name="Level" type="Label" parent="UI/Upgrades MENU"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 84.0
+offset_bottom = 46.0
+text = "Level"
+
+[node name="Name" type="Label" parent="UI/Upgrades MENU/Level"]
+layout_mode = 0
+offset_left = 77.0
+offset_right = 128.0
+offset_bottom = 36.0
+text = "Name"
+
+[node name="Price" type="Label" parent="UI/Upgrades MENU/Level"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 38.0
+text = "Price"
+
+[node name="Upgrade 1" type="Label" parent="UI/Upgrades MENU"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 52.0
+offset_right = 81.0
+offset_bottom = 88.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Upg Brain" type="Label" parent="UI/Upgrades MENU/Upgrade 1"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 183.0
+offset_bottom = 36.0
+text = "Brain"
+
+[node name="Upgrade 1 price" type="Label" parent="UI/Upgrades MENU/Upgrade 1"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 2.0
+offset_right = 269.0
+offset_bottom = 38.0
+text = "10"
+
+[node name="Upgrade 2" type="Label" parent="UI/Upgrades MENU"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 88.0
+offset_right = 81.0
+offset_bottom = 124.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Upgrade 2" type="Label" parent="UI/Upgrades MENU/Upgrade 2"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 183.0
+offset_bottom = 36.0
+text = "Upgrade 2"
+
+[node name="Upgrade 2 price" type="Label" parent="UI/Upgrades MENU/Upgrade 2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 2.0
+offset_right = 270.0
+offset_bottom = 38.0
+text = "20"
+
+[node name="Button Upgrade 1" type="Button" parent="UI/Upgrades MENU"]
+z_index = 50
+layout_mode = 0
+offset_left = 306.0
+offset_top = 51.0
+offset_right = 346.0
+offset_bottom = 82.0
+text = "+"
+
+[node name="Button Upgrade 2" type="Button" parent="UI/Upgrades MENU"]
+z_index = 50
+layout_mode = 0
+offset_left = 306.0
+offset_top = 89.0
+offset_right = 346.0
+offset_bottom = 120.0
+text = "+"
+
+[node name="Main buttons" type="BoxContainer" parent="UI"]
+layout_mode = 1
+offset_right = 331.0
+offset_bottom = 71.0
+alignment = 1
+
+[node name="Button Brain" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Brain"
+icon = ExtResource("5_hrnq2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Eye" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Eye"
+icon = ExtResource("6_4j7qc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Lungs" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Lungs"
+icon = ExtResource("7_b1rrd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Rib Cage" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Rib Cage"
+icon = ExtResource("9_uiadv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Click" type="Button" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 699.0
+offset_top = 143.0
+offset_right = -89.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="UI/Upgrades MENU/Button Upgrade 1" to="." method="_upgrade_1_button"]
+[connection signal="pressed" from="UI/Upgrades MENU/Button Upgrade 2" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/Main buttons/Button Brain" to="." method="_on_button_brain_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Eye" to="." method="_on_button_eye_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Lungs" to="." method="_on_button_lungs_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Rib Cage" to="." method="_on_button_rib_cage_pressed"]
+[connection signal="pressed" from="UI/Click" to="." method="_on_click_pressed"]

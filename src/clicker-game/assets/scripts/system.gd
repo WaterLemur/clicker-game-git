@@ -1,8 +1,8 @@
 extends Node
 
-var intro = preload("res://scns/intro.tscn").instantiate()
-var main = preload("res://scns/main.tscn").instantiate()
-var game = preload("res://scns/game.tscn").instantiate()
+@onready var intro = preload("res://scns/intro.tscn").instantiate()
+@onready var main = preload("res://scns/main.tscn").instantiate()
+@onready var game = preload("res://scns/game.tscn").instantiate()
 
 var timer = 10.0 #1.69
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 	_load_intro()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	scene_states()
 
 
@@ -20,28 +20,26 @@ func scene_states():
 	match Global.state:
 		0:
 			if Global.already_created == false:
-				_load_intro()
 				Global.already_created = true
+				_load_intro()
 		1: 			
 			if Global.already_created == false:
-				_load_main()
 				Global.already_created = true
+				_load_main()
 		2:			
 			if Global.already_created == false:
-				_load_game()
 				Global.already_created = true
+				_load_game()
+				
 	
 func _load_intro():
-	print("Load: Intro")
 	add_child(intro)
 
 	
 func _load_main():
-	print("Load: Main")
 	remove_child(intro)
 	add_child(main)
 	
 func _load_game():
-	print("Load: Game")
 	remove_child(main)
 	add_child(game)

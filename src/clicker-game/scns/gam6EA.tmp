@@ -1,0 +1,380 @@
+[gd_scene load_steps=9 format=3 uid="uid://xjiisy5r7hfo"]
+
+[ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
+[ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
+[ext_resource type="Texture2D" uid="uid://dk85d7aqne3m7" path="res://assets/images/vessels.png" id="3_sq8xp"]
+[ext_resource type="Texture2D" uid="uid://hfs4aurbncbm" path="res://assets/images/Brain.png" id="5_hrnq2"]
+[ext_resource type="Texture2D" uid="uid://be23gr3t65yfs" path="res://assets/images/Eye.png" id="6_4j7qc"]
+[ext_resource type="Texture2D" uid="uid://bsxqsxq3rx6cq" path="res://assets/images/Lungs_A.png" id="7_b1rrd"]
+[ext_resource type="Texture2D" uid="uid://d1cwlushogmmm" path="res://assets/images/Lungs_B.png" id="8_rw4wp"]
+[ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tnw1w")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heart" type="Sprite2D" parent="Background"]
+z_index = -1
+position = Vector2(512, 288)
+texture = ExtResource("2_2giyt")
+
+[node name="Vessels2" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(392.5, 467)
+scale = Vector2(0.541016, 0.804687)
+texture = ExtResource("3_sq8xp")
+
+[node name="Vessels" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(115.247, 528)
+scale = Vector2(0.540029, 0.578125)
+texture = ExtResource("3_sq8xp")
+
+[node name="Vessels3" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(841.753, 600)
+scale = Vector2(1.23925, 0.257812)
+texture = ExtResource("3_sq8xp")
+
+[node name="Graphics" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Brain" type="Sprite2D" parent="Graphics"]
+position = Vector2(623, 139)
+texture = ExtResource("5_hrnq2")
+
+[node name="Eye" type="Sprite2D" parent="Graphics"]
+position = Vector2(904, 106)
+texture = ExtResource("6_4j7qc")
+
+[node name="Lungs" type="Node2D" parent="Graphics"]
+position = Vector2(620, 384)
+
+[node name="Lungs A" type="Sprite2D" parent="Graphics/Lungs"]
+texture = ExtResource("7_b1rrd")
+
+[node name="Lungs B" type="Sprite2D" parent="Graphics/Lungs"]
+texture = ExtResource("8_rw4wp")
+
+[node name="Rib Cage" type="Sprite2D" parent="Graphics"]
+position = Vector2(787, 376)
+texture = ExtResource("9_uiadv")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resource" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 88.0
+offset_right = 327.0
+offset_bottom = 166.0
+
+[node name="L Resource" type="Label" parent="UI/Resource"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 182.0
+offset_bottom = 62.0
+text = "Resource:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="L Amount" type="Label" parent="UI/Resource/L Resource"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 15.0
+offset_right = 365.0
+offset_bottom = 51.0
+text = "000000000"
+vertical_alignment = 1
+
+[node name="STORES" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MAIN STORE" type="VBoxContainer" parent="UI/STORES"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -69.5
+offset_right = 437.225
+offset_bottom = 77.2
+grow_vertical = 2
+
+[node name="LABELS" type="HBoxContainer" parent="UI/STORES/MAIN STORE"]
+layout_mode = 2
+
+[node name="L Level" type="Label" parent="UI/STORES/MAIN STORE/LABELS"]
+layout_mode = 2
+text = "LEVEL"
+
+[node name="L Part" type="Label" parent="UI/STORES/MAIN STORE/LABELS/L Level"]
+layout_mode = 2
+offset_left = 59.275
+offset_right = 99.275
+offset_bottom = 23.0
+text = "PART"
+
+[node name="L Price" type="Label" parent="UI/STORES/MAIN STORE/LABELS/L Level/L Part"]
+layout_mode = 2
+offset_left = 97.225
+offset_right = 142.225
+offset_bottom = 23.0
+text = "PRICE"
+
+[node name="L X-Price" type="Label" parent="UI/STORES/MAIN STORE/LABELS/L Level/L Part/L Price"]
+layout_mode = 2
+offset_left = 76.035
+offset_right = 123.035
+offset_bottom = 23.0
+text = "X-PRICE"
+
+[node name="Upgrade" type="Label" parent="UI/STORES/MAIN STORE/LABELS/L Level/L Part/L Price/L X-Price"]
+layout_mode = 0
+offset_left = 76.035
+offset_right = 123.035
+offset_bottom = 23.0
+text = "UPGRADE"
+
+[node name="BRAIN" type="HBoxContainer" parent="UI/STORES/MAIN STORE"]
+layout_mode = 2
+
+[node name="Lvl Brain" type="Label" parent="UI/STORES/MAIN STORE/BRAIN"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="L Brain" type="Label" parent="UI/STORES/MAIN STORE/BRAIN/Lvl Brain"]
+layout_mode = 2
+offset_left = 61.8
+offset_right = 103.8
+offset_bottom = 23.0
+text = "Brain"
+
+[node name="L Price Brain" type="Label" parent="UI/STORES/MAIN STORE/BRAIN/Lvl Brain/L Brain"]
+layout_mode = 2
+offset_left = 95.24
+offset_right = 114.24
+offset_bottom = 23.0
+text = "10"
+horizontal_alignment = 2
+
+[node name="L X-Price Brain" type="Label" parent="UI/STORES/MAIN STORE/BRAIN/Lvl Brain/L Brain/L Price Brain"]
+layout_mode = 0
+offset_left = 75.755
+offset_right = 94.755
+offset_bottom = 23.0
+text = "10"
+
+[node name="Btn Upg Brain" type="Button" parent="UI/STORES/MAIN STORE/BRAIN/Lvl Brain/L Brain/L Price Brain"]
+z_index = 50
+layout_mode = 2
+offset_left = 152.1
+offset_top = -4.0
+offset_right = 197.605
+offset_bottom = 27.0
+text = "+"
+
+[node name="EYE" type="HBoxContainer" parent="UI/STORES/MAIN STORE"]
+layout_mode = 2
+
+[node name="Lvl Eye" type="Label" parent="UI/STORES/MAIN STORE/EYE"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="L Eye" type="Label" parent="UI/STORES/MAIN STORE/EYE/Lvl Eye"]
+layout_mode = 2
+offset_left = 63.64
+offset_right = 90.64
+offset_bottom = 23.0
+text = "Eye"
+
+[node name="L Price Eye" type="Label" parent="UI/STORES/MAIN STORE/EYE/Lvl Eye/L Eye"]
+layout_mode = 2
+offset_left = 94.39
+offset_right = 113.39
+offset_bottom = 23.0
+text = "20"
+
+[node name="L X-Price Eye" type="Label" parent="UI/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye"]
+layout_mode = 0
+offset_left = 75.755
+offset_right = 94.755
+offset_bottom = 23.0
+text = "10"
+
+[node name="Btn Upg Eye" type="Button" parent="UI/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye"]
+z_index = 50
+layout_mode = 2
+offset_left = 74.565
+offset_right = 120.07
+offset_bottom = 31.0
+text = "+"
+
+[node name="LUNGS" type="HBoxContainer" parent="UI/STORES/MAIN STORE"]
+layout_mode = 2
+
+[node name="Lvl Lungs" type="Label" parent="UI/STORES/MAIN STORE/LUNGS"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="L Lungs" type="Label" parent="UI/STORES/MAIN STORE/LUNGS/Lvl Lungs"]
+layout_mode = 2
+offset_left = 63.8
+offset_right = 109.8
+offset_bottom = 23.0
+text = "Lungs"
+
+[node name="L Price Lungs" type="Label" parent="UI/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs"]
+layout_mode = 2
+offset_left = 94.715
+offset_right = 113.715
+offset_bottom = 23.0
+text = "20"
+
+[node name="L X-Price Lungs" type="Label" parent="UI/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs"]
+layout_mode = 0
+offset_left = 75.385
+offset_right = 94.385
+offset_bottom = 23.0
+text = "20"
+
+[node name="Btn Upg Lungs" type="Button" parent="UI/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs"]
+z_index = 50
+layout_mode = 0
+offset_left = 74.785
+offset_right = 120.29
+offset_bottom = 31.0
+text = "+"
+
+[node name="RIB CAGE" type="HBoxContainer" parent="UI/STORES/MAIN STORE"]
+layout_mode = 2
+
+[node name="Lvl Rib Cage" type="Label" parent="UI/STORES/MAIN STORE/RIB CAGE"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="L Rib Cage" type="Label" parent="UI/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage"]
+layout_mode = 2
+offset_left = 64.115
+offset_right = 131.115
+offset_bottom = 23.0
+text = "Rib Cage"
+
+[node name="L Price Rib Cage" type="Label" parent="UI/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage"]
+layout_mode = 2
+offset_left = 95.26
+offset_right = 114.26
+offset_bottom = 23.0
+text = "20"
+
+[node name="L X-Price Rib Cage" type="Label" parent="UI/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage"]
+layout_mode = 0
+offset_left = 75.065
+offset_right = 94.065
+offset_bottom = 23.0
+text = "20"
+
+[node name="Btn Upg Rib Cage" type="Button" parent="UI/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage/L X-Price Rib Cage"]
+z_index = 50
+layout_mode = 0
+offset_left = 75.02
+offset_right = 120.525
+offset_bottom = 31.0
+text = "+"
+
+[node name="Main buttons" type="BoxContainer" parent="UI"]
+layout_mode = 1
+offset_right = 331.0
+offset_bottom = 71.0
+alignment = 1
+
+[node name="Button Brain" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Brain"
+icon = ExtResource("5_hrnq2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Eye" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Eye"
+icon = ExtResource("6_4j7qc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Lungs" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Lungs"
+icon = ExtResource("7_b1rrd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button Rib Cage" type="Button" parent="UI/Main buttons"]
+z_index = 50
+layout_mode = 2
+text = "Rib Cage"
+icon = ExtResource("9_uiadv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Click" type="Button" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 699.0
+offset_top = 143.0
+offset_right = -89.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="UI/STORES/MAIN STORE/BRAIN/Lvl Brain/L Brain/L Price Brain/Btn Upg Brain" to="." method="_upgrade_1_button"]
+[connection signal="pressed" from="UI/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye/Btn Upg Eye" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs/Btn Upg Lungs" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage/L X-Price Rib Cage/Btn Upg Rib Cage" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/Main buttons/Button Brain" to="." method="_on_button_brain_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Eye" to="." method="_on_button_eye_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Lungs" to="." method="_on_button_lungs_pressed"]
+[connection signal="pressed" from="UI/Main buttons/Button Rib Cage" to="." method="_on_button_rib_cage_pressed"]
+[connection signal="pressed" from="UI/Click" to="." method="_on_click_pressed"]

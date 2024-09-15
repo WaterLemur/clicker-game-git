@@ -11,6 +11,7 @@ var stage = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("State = " + str(Global.state) + " , Load: Intro")
 	logo.set_modulate(Color(1,1,1,0))
 	company.set_modulate(Color(1,1,1,0))
 	dev.set_modulate(Color(1,1,1,0))
@@ -37,5 +38,6 @@ func fade(delta: float) -> void:
 		alpha -= 1.30 * delta
 		_set_alpha(alpha)
 		if alpha < 0:
+			stage = false
 			Global.state += 1
 			Global.already_created = false

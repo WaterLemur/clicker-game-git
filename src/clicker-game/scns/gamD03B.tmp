@@ -1318,7 +1318,7 @@ offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_on_btn_upg_brain_pressed"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_upgrade_1_button"]
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var/Btn Upg Lungs" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var/L X-Price Rib Cage Var/Btn Upg Rib Cage" to="." method="_upgrade_2_button"]

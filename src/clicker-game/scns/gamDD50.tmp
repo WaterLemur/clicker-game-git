@@ -293,7 +293,7 @@ offset_right = 103.8
 offset_bottom = 23.0
 text = "Brain"
 
-[node name="L Price Brain Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain"]
+[node name="L Price Brain" type="Label" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain"]
 layout_mode = 2
 offset_left = 95.24
 offset_right = 114.24
@@ -301,14 +301,14 @@ offset_bottom = 23.0
 text = "10"
 horizontal_alignment = 2
 
-[node name="L X-Price Brain Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var"]
+[node name="L X-Price Brain" type="Label" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain"]
 layout_mode = 0
 offset_left = 75.755
 offset_right = 94.755
 offset_bottom = 23.0
 text = "10"
 
-[node name="Btn Upg Brain" type="Button" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var"]
+[node name="Btn Upg Brain" type="Button" parent="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain"]
 z_index = 50
 layout_mode = 2
 offset_left = 152.1
@@ -320,33 +320,33 @@ text = "+"
 [node name="EYE" type="HBoxContainer" parent="UI/MENU/STORES/MAIN STORE"]
 layout_mode = 2
 
-[node name="Lvl Eye Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE"]
+[node name="Lvl Eye" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE"]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
 
-[node name="L Eye" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var"]
+[node name="L Eye" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye"]
 layout_mode = 2
 offset_left = 63.64
 offset_right = 90.64
 offset_bottom = 23.0
 text = "Eye"
 
-[node name="L Price Eye Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye"]
+[node name="L Price Eye" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye/L Eye"]
 layout_mode = 2
 offset_left = 94.39
 offset_right = 113.39
 offset_bottom = 23.0
 text = "20"
 
-[node name="L X-Price Eye Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var"]
+[node name="L X-Price Eye" type="Label" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye"]
 layout_mode = 0
 offset_left = 75.755
 offset_right = 94.755
 offset_bottom = 23.0
 text = "10"
 
-[node name="Btn Upg Eye" type="Button" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var"]
+[node name="Btn Upg Eye" type="Button" parent="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye"]
 z_index = 50
 layout_mode = 2
 offset_left = 74.565
@@ -357,33 +357,33 @@ text = "+"
 [node name="LUNGS" type="HBoxContainer" parent="UI/MENU/STORES/MAIN STORE"]
 layout_mode = 2
 
-[node name="Lvl Lungs Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS"]
+[node name="Lvl Lungs" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS"]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
 
-[node name="L Lungs" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var"]
+[node name="L Lungs" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs"]
 layout_mode = 2
 offset_left = 63.8
 offset_right = 109.8
 offset_bottom = 23.0
 text = "Lungs"
 
-[node name="L Price Lungs Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs"]
+[node name="L Price Lungs" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs"]
 layout_mode = 2
 offset_left = 94.715
 offset_right = 113.715
 offset_bottom = 23.0
 text = "20"
 
-[node name="L X-Price Lungs Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var"]
+[node name="L X-Price Lungs" type="Label" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs"]
 layout_mode = 0
 offset_left = 75.385
 offset_right = 94.385
 offset_bottom = 23.0
 text = "20"
 
-[node name="Btn Upg Lungs" type="Button" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var"]
+[node name="Btn Upg Lungs" type="Button" parent="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs"]
 z_index = 50
 layout_mode = 0
 offset_left = 74.785
@@ -394,33 +394,33 @@ text = "+"
 [node name="RIB CAGE" type="HBoxContainer" parent="UI/MENU/STORES/MAIN STORE"]
 layout_mode = 2
 
-[node name="Lvl Rib Cage Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE"]
+[node name="Lvl Rib Cage" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE"]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
 
-[node name="L Rib Cage" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var"]
+[node name="L Rib Cage" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage"]
 layout_mode = 2
 offset_left = 64.115
 offset_right = 131.115
 offset_bottom = 23.0
 text = "Rib Cage"
 
-[node name="L Price Rib Cage Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage"]
+[node name="L Price Rib Cage" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage"]
 layout_mode = 2
 offset_left = 95.26
 offset_right = 114.26
 offset_bottom = 23.0
 text = "20"
 
-[node name="L X-Price Rib Cage Var" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var"]
+[node name="L X-Price Rib Cage" type="Label" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage"]
 layout_mode = 0
 offset_left = 75.065
 offset_right = 94.065
 offset_bottom = 23.0
 text = "20"
 
-[node name="Btn Upg Rib Cage" type="Button" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var/L X-Price Rib Cage Var"]
+[node name="Btn Upg Rib Cage" type="Button" parent="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage/L X-Price Rib Cage"]
 z_index = 50
 layout_mode = 0
 offset_left = 75.02
@@ -1318,10 +1318,10 @@ offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_on_btn_upg_brain_pressed"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_upgrade_2_button"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var/Btn Upg Lungs" to="." method="_upgrade_2_button"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var/L X-Price Rib Cage Var/Btn Upg Rib Cage" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain/Btn Upg Brain" to="." method="_upgrade_1_button"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye/Btn Upg Eye" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs/Btn Upg Lungs" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage/L Rib Cage/L Price Rib Cage/L X-Price Rib Cage/Btn Upg Rib Cage" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/BRAIN/Lvl Brain/L Brain/L Price Brain/Btn Upg Brain" to="." method="_upgrade_1_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye/Btn Upg Eye" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs/Btn Upg Lungs" to="." method="_upgrade_2_button"]
