@@ -1319,9 +1319,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_on_btn_upg_brain_pressed"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_upgrade_2_button"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var/Btn Upg Lungs" to="." method="_upgrade_2_button"]
-[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var/L X-Price Rib Cage Var/Btn Upg Rib Cage" to="." method="_upgrade_2_button"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_on_btn_upg_eye_pressed"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var/Btn Upg Lungs" to="." method="_on_btn_upg_lungs_pressed"]
+[connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/RIB CAGE/Lvl Rib Cage Var/L Rib Cage/L Price Rib Cage Var/L X-Price Rib Cage Var/Btn Upg Rib Cage" to="." method="_on_btn_upg_rib_cage_pressed"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/BRAIN/Lvl Brain/L Brain/L Price Brain/Btn Upg Brain" to="." method="_upgrade_1_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/EYE/Lvl Eye/L Eye/L Price Eye/L X-Price Eye/Btn Upg Eye" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE BRAIN/LUNGS/Lvl Lungs/L Lungs/L Price Lungs/L X-Price Lungs/Btn Upg Lungs" to="." method="_upgrade_2_button"]
