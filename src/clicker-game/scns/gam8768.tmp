@@ -97,14 +97,6 @@ texture = ExtResource("8_rw4wp")
 position = Vector2(787, 376)
 texture = ExtResource("9_uiadv")
 
-[node name="Virus" type="Sprite2D" parent="Graphics"]
-position = Vector2(787, 376)
-texture = ExtResource("9_uiadv")
-
-[node name="Vaccine" type="Sprite2D" parent="Graphics"]
-position = Vector2(787, 376)
-texture = ExtResource("9_uiadv")
-
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

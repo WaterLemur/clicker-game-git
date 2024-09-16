@@ -19,6 +19,13 @@ var total_clicks: int = 0
 var resource: int = 0
 var resource_multiplier: float = 1.0
 	
+var timer: float = 0.0
+var timer_max: float = 1.0
+var timer_x: float = 100.0 #10.0
+var hours: int = 0
+var minutes: int = 0
+var day: bool = true
+	
 var price_brain: int = 20
 var price_eye: int = 10
 var price_lungs: int = 5
@@ -69,6 +76,11 @@ var lvl_skeleton: int = 0
 @onready var img_lungs: Node2D = $Graphics/Lungs
 @onready var img_skeleton: Sprite2D = $"Graphics/Skeleton"
 	
+@onready var img_day: Sprite2D = $"Background/Day Night/Day"
+@onready var img_night: Sprite2D = $"Background/Day Night/Night"
+
+@onready var img_virus: Sprite2D = $Graphics/Virus
+@onready var img_vaccine: Sprite2D = $Graphics/Vaccine
 # Buttons --------------------------------------------------------------------
 @onready var btn_brain: Label = $"UI/MAIN BUTTONS/MAIN BRAIN/Label Brain"
 @onready var btn_eye: Label = $"UI/MAIN BUTTONS/MAIN EYES/Label Eye"
@@ -91,6 +103,9 @@ func _ready() -> void:
 	
 	l_resource.text = RESOURCE_NAME + ":"
 	l_resource_amount.text = "0"
+	
+	timer = timer_max
+	_day_night_cycle()
 	
 	img_brain.set_modulate(TRANSPARENT)
 	img_eye.set_modulate(TRANSPARENT)
@@ -120,7 +135,8 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	_timer(delta)
+	print(str(timer) + " - Timer:" + str(hours) + ":" + str(minutes))
 	
 	
 # ASSIGN COLORS --------------------------------------------------------------
@@ -155,7 +171,6 @@ func _color_store_skeleton(new_col: Color) -> void:
 	btn_upg_skeleton.set_modulate(new_col)
 	
 	btn_skeleton.set_modulate(new_col)
-	
 	
 # BUTTON PRESS ----------------------------------------------------------------
 func _on_click_pressed() -> void:
@@ -273,4 +288,27 @@ func _on_btn_upg_skeleton_pressed() -> void:
 		l_lvl_skeleton.text = str(lvl_skeleton)
 		l_price_skeleton.text = str("%.2f" % price_skeleton)
 		l_resource_amount.text = str(resource)
+	
+# TIMER -----------------------------------------------------------------------
+func _timer(delta: float) -> void:
+	if timer <= 0:
+		timer = timer_max
+		if minutes == 59: 
+			minutes = 1
+			if hours == 23:
+				hours = 1
+				day = !day
+				_day_night_cycle()
+			else: hours += 1
+		else: minutes += 1
+	else: timer = timer - (delta * timer_x)
+	
+# DAY/NIGHT CYCLE -------------------------------------------------------------
+func _day_night_cycle() -> void:
+	if day == true:
+		img_day.visible = true
+		img_night.visible = false
+	else:
+		img_day.visible = false
+		img_night.visible = true
 	

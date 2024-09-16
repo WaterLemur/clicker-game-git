@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://250l2gt7iced"]
+[gd_scene load_steps=5 format=3 uid="uid://250l2gt7iced"]
 
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_q0u7k"]
+[ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_71pau"]
 [ext_resource type="LabelSettings" uid="uid://6ebnod0ipxhr" path="res://assets/system/label_settings_title.tres" id="2_jilr6"]
 [ext_resource type="LabelSettings" uid="uid://cfanhbk7yjbtj" path="res://assets/system/label_settings_info.tres" id="3_xwetd"]
 
@@ -15,7 +16,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Heart+BG" type="Sprite2D" parent="UI"]
+z_index = -1
+position = Vector2(512, 288)
+texture = ExtResource("2_71pau")
+
 [node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.748544, 0.447454, 0.335886, 1)
 
-[node name="Title" type="Label" parent="UI"]
+[node name="Game Name" type="Label" parent="UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
