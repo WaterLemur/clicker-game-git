@@ -44,6 +44,7 @@ var lvl_skeleton: int = 0
 # REFERENCES -----------------------------------------------------------------
 #Labels ----------------------------------------------------------------------
 @onready var l_clicks = $"UI/RESOURCE/L Resource/L Resource Var"
+@onready var l_time = $UI/Time
 	
 #day/night cycle variables
 	
@@ -324,10 +325,11 @@ func _on_btn_upg_skeleton_pressed() -> void:
 func _timer(delta: float) -> void:
 	if timer <= 0:
 		timer = timer_max
+		l_time.text = str(hours) + ":" + str(minutes)
 		if minutes == 59: 
-			minutes = 1
+			minutes = 0
 			if hours == 23:
-				hours = 1
+				hours = 0
 				day = !day
 				_day_night_cycle()
 			else: hours += 1

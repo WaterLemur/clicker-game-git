@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=12 format=3 uid="uid://xjiisy5r7hfo"]
 
 [ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
 [ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dp3h75ipbq7k2" path="res://assets/images/Blood_A.png" id="9_6e7pq"]
 [ext_resource type="Texture2D" uid="uid://b5f1g2vmju1n0" path="res://icon.svg" id="9_ij0od"]
 [ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
+[ext_resource type="LabelSettings" uid="uid://c034qv02bgqo5" path="res://assets/system/label_time.tres" id="11_fdspl"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -616,7 +617,6 @@ offset_bottom = 31.0
 text = "+"
 
 [node name="STORE EYE" type="VBoxContainer" parent="UI/MENU/STORES"]
-visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -885,6 +885,7 @@ layout_mode = 2
 text = "+"
 
 [node name="STORE SKELETON" type="VBoxContainer" parent="UI/MENU/STORES"]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1118,6 +1119,15 @@ offset_right = -89.0
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Time" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 6.0
+offset_right = 793.0
+offset_bottom = 50.0
+text = "00:00"
+label_settings = ExtResource("11_fdspl")
 
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_on_btn_upg_brain_pressed"]
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_on_btn_upg_eye_pressed"]
