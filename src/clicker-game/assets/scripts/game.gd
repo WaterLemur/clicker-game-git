@@ -237,6 +237,12 @@ func _on_click_pressed() -> void:
 	resource += 1 * resource_multiplier
 	print("Clicks: " + str(total_clicks) + " ... Resource: " + str(resource))
 	l_resource_amount.text = str(resource)
+	var rng = RandomNumberGenerator.new()
+	var n = rng.randf_range(1, 1.15)
+	img_day.scale.x = n
+	img_day.scale.y = n
+	img_night.scale.x = n
+	img_night.scale.y = n
 
 	# Check color clicked yellow ---------------------------------------------
 	if resource >= price_brain:
