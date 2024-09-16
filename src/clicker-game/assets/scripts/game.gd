@@ -70,10 +70,10 @@ var lvl_skeleton: int = 0
 @onready var img_skeleton: Sprite2D = $"Graphics/Skeleton"
 	
 # Buttons --------------------------------------------------------------------
-@onready var btn_brain: Label = $"UI/MAIN BUTTONS/Button Brain/Label"
-@onready var btn_eye: Label = $"UI/MAIN BUTTONS/Button Eye/Label"
-@onready var btn_lungs: Label = $"UI/MAIN BUTTONS/Button Lungs/Label"
-@onready var btn_skeleton: Label = $"UI/MAIN BUTTONS/Button Skeleton/Label"
+@onready var btn_brain: Label = $"UI/MAIN BUTTONS/MAIN BRAIN/Label Brain"
+@onready var btn_eye: Label = $"UI/MAIN BUTTONS/MAIN EYES/Label Eye"
+@onready var btn_lungs: Label = $"UI/MAIN BUTTONS/MAIN LUNGS/Label Lungs"
+@onready var btn_skeleton: Label = $"UI/MAIN BUTTONS/MAIN SKELETON/Label Skeleton"
 	
 #MAIN STORE
 @onready var btn_upg_brain: Button = $"UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain"
