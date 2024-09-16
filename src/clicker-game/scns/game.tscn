@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=11 format=3 uid="uid://xjiisy5r7hfo"]
 
 [ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
 [ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsxqsxq3rx6cq" path="res://assets/images/Lungs_A.png" id="7_b1rrd"]
 [ext_resource type="Texture2D" uid="uid://d1cwlushogmmm" path="res://assets/images/Lungs_B.png" id="8_rw4wp"]
 [ext_resource type="Texture2D" uid="uid://dp3h75ipbq7k2" path="res://assets/images/Blood_A.png" id="9_6e7pq"]
+[ext_resource type="Texture2D" uid="uid://b5f1g2vmju1n0" path="res://icon.svg" id="9_ij0od"]
 [ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
 
 [node name="Game" type="Control"]
@@ -98,12 +99,12 @@ position = Vector2(787, 376)
 texture = ExtResource("9_uiadv")
 
 [node name="Virus" type="Sprite2D" parent="Graphics"]
-position = Vector2(787, 376)
-texture = ExtResource("9_uiadv")
+position = Vector2(461, 195)
+texture = ExtResource("9_ij0od")
 
 [node name="Vaccine" type="Sprite2D" parent="Graphics"]
-position = Vector2(787, 376)
-texture = ExtResource("9_uiadv")
+position = Vector2(512, 95)
+texture = ExtResource("9_ij0od")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
@@ -268,6 +269,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MAIN STORE" type="VBoxContainer" parent="UI/MENU/STORES"]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -883,7 +885,6 @@ layout_mode = 2
 text = "+"
 
 [node name="STORE SKELETON" type="VBoxContainer" parent="UI/MENU/STORES"]
-visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1134,7 +1135,7 @@ grow_vertical = 2
 [connection signal="pressed" from="UI/MENU/STORES/STORE SKELETON/SKELETON/Lvl Skeleton/L Skeleton/L Price Skeleton/L X-Price Skeleton/Btn Upg Skeleton" to="." method="_upgrade_2_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE SKELETON/CALCIUM/Btn Toughts -" to="." method="_upgrade_1_button"]
 [connection signal="pressed" from="UI/MENU/STORES/STORE SKELETON/CALCIUM/Btn Toughts +" to="." method="_upgrade_1_button"]
-[connection signal="pressed" from="UI/MAIN BUTTONS/MAIN/Button MAIN" to="." method="_on_button_brain_pressed"]
+[connection signal="pressed" from="UI/MAIN BUTTONS/MAIN/Button MAIN" to="." method="_on_button_main_store_pressed"]
 [connection signal="pressed" from="UI/MAIN BUTTONS/MAIN BRAIN/Button Brain" to="." method="_on_button_brain_pressed"]
 [connection signal="pressed" from="UI/MAIN BUTTONS/MAIN EYES/Button Eye" to="." method="_on_button_eye_pressed"]
 [connection signal="pressed" from="UI/MAIN BUTTONS/MAIN LUNGS/Button Lungs" to="." method="_on_button_lungs_pressed"]

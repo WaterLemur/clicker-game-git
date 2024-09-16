@@ -74,7 +74,7 @@ var lvl_skeleton: int = 0
 @onready var img_brain: Sprite2D = $Graphics/Brain
 @onready var img_eye: Sprite2D = $Graphics/Eye
 @onready var img_lungs: Node2D = $Graphics/Lungs
-@onready var img_skeleton: Sprite2D = $"Graphics/Skeleton"
+@onready var img_skeleton: Sprite2D = $Graphics/Skeleton
 	
 @onready var img_day: Sprite2D = $"Background/Day Night/Day"
 @onready var img_night: Sprite2D = $"Background/Day Night/Night"
@@ -82,6 +82,8 @@ var lvl_skeleton: int = 0
 @onready var img_virus: Sprite2D = $Graphics/Virus
 @onready var img_vaccine: Sprite2D = $Graphics/Vaccine
 # Buttons --------------------------------------------------------------------
+@onready var btn_main: Label = $"UI/MAIN BUTTONS/MAIN/Label MAIN"
+
 @onready var btn_brain: Label = $"UI/MAIN BUTTONS/MAIN BRAIN/Label Brain"
 @onready var btn_eye: Label = $"UI/MAIN BUTTONS/MAIN EYES/Label Eye"
 @onready var btn_lungs: Label = $"UI/MAIN BUTTONS/MAIN LUNGS/Label Lungs"
@@ -142,6 +144,8 @@ func _ready() -> void:
 	l_x_price_eye.text = str(x_price_eye)
 	l_x_price_lungs.text = str(x_price_lungs)
 	l_x_price_skeleton.text = str(x_price_skeleton)
+	
+	_menu_active(store_main)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -218,6 +222,10 @@ func _check_store_color_blue() -> void:
 	
 	if resource < price_brain: btn_brain.set_modulate(BLUE)
 	
+		
+func _on_button_main_store_pressed() -> void:
+	btn_main.set_modulate(GREEN)
+	_menu_active(store_main)
 	
 func _on_button_brain_pressed() -> void:
 	if lvl_brain == 0:
@@ -225,7 +233,27 @@ func _on_button_brain_pressed() -> void:
 	elif lvl_brain > 0:
 		btn_brain.set_modulate(GREEN)
 		_menu_active(store_brain)
-	
+			
+func _on_button_eye_pressed() -> void:
+	if lvl_eye == 0:
+		pass
+	elif lvl_eye > 0:
+		btn_eye.set_modulate(GREEN)
+		_menu_active(store_eye)
+		
+func _on_button_lungs_pressed() -> void:
+	if lvl_lungs == 0:
+		pass
+	elif lvl_lungs > 0:
+		btn_lungs.set_modulate(GREEN)
+		_menu_active(store_lungs)
+		
+func _on_button_skeleton_pressed() -> void:
+	if lvl_skeleton == 0:
+		pass
+	elif lvl_skeleton > 0:
+		btn_skeleton.set_modulate(GREEN)
+		_menu_active(store_skeleton)
 	
 func _menu_active(active: VBoxContainer) -> void:
 	pass
@@ -233,22 +261,6 @@ func _menu_active(active: VBoxContainer) -> void:
 		if m == active: m.visible = true
 		else: m.visible = false
 		
-func _on_button_eye_pressed() -> void:
-	if lvl_eye == 0:
-		pass
-	elif lvl_eye > 0:
-		btn_eye.set_modulate(GREEN)
-func _on_button_lungs_pressed() -> void:
-	if lvl_lungs == 0:
-		pass
-	elif lvl_lungs > 0:
-		btn_lungs.set_modulate(GREEN)
-func _on_button_skeleton_pressed() -> void:
-	if lvl_skeleton == 0:
-		pass
-	elif lvl_skeleton > 0:
-		btn_skeleton.set_modulate(GREEN)
-	
 # UPGRADE --------------------------------------------------------------------
 func _on_btn_upg_brain_pressed() -> void:
 	if resource >= price_brain:
