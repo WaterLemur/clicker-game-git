@@ -4,7 +4,6 @@ extends Control
 @onready var company = $Company
 @onready var dev =     $Dev
 
-var timer = 1.5
 var alpha = 0.0
 var stage = false
 

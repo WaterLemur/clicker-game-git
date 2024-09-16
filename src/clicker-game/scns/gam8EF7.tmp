@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xjiisy5r7hfo"]
+[gd_scene load_steps=12 format=3 uid="uid://xjiisy5r7hfo"]
 
 [ext_resource type="Script" path="res://assets/scripts/game.gd" id="1_tnw1w"]
 [ext_resource type="Texture2D" uid="uid://ch0o460shjf7" path="res://assets/images/Backgroun.png" id="2_2giyt"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b5f1g2vmju1n0" path="res://icon.svg" id="9_ij0od"]
 [ext_resource type="Texture2D" uid="uid://n1pu33484amk" path="res://assets/images/Rib cage.png" id="9_uiadv"]
 [ext_resource type="LabelSettings" uid="uid://c034qv02bgqo5" path="res://assets/system/label_time.tres" id="11_fdspl"]
-[ext_resource type="LabelSettings" uid="uid://dh00o4mdrh8st" path="res://assets/system/label_dead.tres" id="12_86g1h"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -1137,42 +1136,6 @@ offset_right = 793.0
 offset_bottom = 50.0
 text = "00:00"
 label_settings = ExtResource("11_fdspl")
-
-[node name="DEATH SCREEN" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Black BG" type="ColorRect" parent="DEATH SCREEN"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="DEATH SCREEN"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -247.5
-offset_top = -114.0
-offset_right = 247.5
-offset_bottom = 114.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "DEAD!"
-label_settings = ExtResource("12_86g1h")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain" to="." method="_on_btn_upg_brain_pressed"]
 [connection signal="pressed" from="UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye" to="." method="_on_btn_upg_eye_pressed"]
