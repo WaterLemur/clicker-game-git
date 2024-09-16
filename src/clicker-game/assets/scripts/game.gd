@@ -87,18 +87,29 @@ var lvl_skeleton: int = 0
 @onready var btn_lungs: Label = $"UI/MAIN BUTTONS/MAIN LUNGS/Label Lungs"
 @onready var btn_skeleton: Label = $"UI/MAIN BUTTONS/MAIN SKELETON/Label Skeleton"
 	
-#MAIN STORE
+#MAIN STORE ------------------------------------------------------------------
 @onready var btn_upg_brain: Button = $"UI/MENU/STORES/MAIN STORE/BRAIN/Lvl Brain Var/L Brain/L Price Brain Var/Btn Upg Brain"
 @onready var btn_upg_eye: Button = $"UI/MENU/STORES/MAIN STORE/EYE/Lvl Eye Var/L Eye/L Price Eye Var/L X-Price Eye Var/Btn Upg Eye"
 @onready var btn_upg_lungs: Button = $"UI/MENU/STORES/MAIN STORE/LUNGS/Lvl Lungs Var/L Lungs/L Price Lungs Var/L X-Price Lungs Var/Btn Upg Lungs"
 @onready var btn_upg_skeleton: Button = $"UI/MENU/STORES/MAIN STORE/SKELETON/Lvl Skeleton Var/L Skeleton/L Price Skeleton Var/L X-Price Skeleton Var/Btn Upg Skeleton"
 	
-var btn_array = [ btn_brain, btn_eye, btn_lungs, btn_skeleton ]
+@onready var store_main: VBoxContainer = $"UI/MENU/STORES/MAIN STORE"
+@onready var store_brain: VBoxContainer = $"UI/MENU/STORES/STORE BRAIN"
+@onready var store_eye: VBoxContainer = $"UI/MENU/STORES/STORE EYE"
+@onready var store_lungs: VBoxContainer = $"UI/MENU/STORES/STORE LUNGS"
+@onready var store_skeleton: VBoxContainer = $"UI/MENU/STORES/STORE SKELETON"
+
+# STORES ---------------------------------------------------------------------
+var btn_array
+var store_array
 	
 	
 # FUNCTIONS ------------------------------------------------------------------
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	btn_array  = [ btn_brain, btn_eye, btn_lungs, btn_skeleton ]
+	store_array = [ store_main, store_brain, store_eye, store_lungs, store_skeleton ]
+	print(store_array)
 	print("State = " + str(Global.state) + " , Load: Game")
 	
 	l_resource.text = RESOURCE_NAME + ":"
@@ -213,7 +224,15 @@ func _on_button_brain_pressed() -> void:
 		pass
 	elif lvl_brain > 0:
 		btn_brain.set_modulate(GREEN)
+		_menu_active(store_brain)
 	
+	
+func _menu_active(active: VBoxContainer) -> void:
+	pass
+	for m in store_array:
+		if m == active: m.visible = true
+		else: m.visible = false
+		
 func _on_button_eye_pressed() -> void:
 	if lvl_eye == 0:
 		pass
@@ -230,7 +249,7 @@ func _on_button_skeleton_pressed() -> void:
 	elif lvl_skeleton > 0:
 		btn_skeleton.set_modulate(GREEN)
 	
-	
+# UPGRADE --------------------------------------------------------------------
 func _on_btn_upg_brain_pressed() -> void:
 	if resource >= price_brain:
 		if lvl_brain == 0:
