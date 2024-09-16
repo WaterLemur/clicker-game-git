@@ -47,7 +47,7 @@ var lvl_eye: int = 0
 var lvl_lungs: int = 0
 var lvl_skeleton: int = 0
 
-var resource_neurones: int = 5 #100
+var resource_neurones: int = 100 #5
 var sight_range: int = 10
 var air_capacity: int = 27
 var calcium_level: int = 7000
